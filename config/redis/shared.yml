@@ -1,12 +1,10 @@
 production: &production
   host: <%= ENV.fetch("REDIS_URL", "127.0.0.1") %>
-  port: <%= ENV.fetch("REDIS_PORT", "6379") %>
   timeout: 1
   driver: :hiredis
 
 development: &development
   host: <%= ENV.fetch("REDIS_URL", "127.0.0.1") %>
-  port: <%= ENV.fetch("REDIS_PORT", "6379") %>
   timeout: 1
   driver: :hiredis
 
