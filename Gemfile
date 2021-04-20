@@ -8,8 +8,7 @@ gem "pg", "~> 1.1"
 gem "puma", "~> 5.2.1"
 gem "webpacker", "~> 5.2.1"
 gem "jbuilder", "~> 2.7"
-gem "redis", ">= 4.0", require: ["redis", "redis/connection/hiredis"]
-gem "hiredis"
+gem "redis", ">= 4.0"
 gem "redis-session-store", "~> 0.11.3"
 gem "bootsnap", ">= 1.4.4", require: false
 

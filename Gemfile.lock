@@ -119,7 +119,6 @@ GEM
     ffi (1.15.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    hiredis (0.6.3)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     jbuilder (2.11.2)
@@ -268,7 +267,6 @@ DEPENDENCIES
   cable_ready!
   capybara (>= 3.26)
   faker (~> 2.16)
-  hiredis
   jbuilder (~> 2.7)
   kredis (~> 0.2.3)
   listen (~> 3.3)
