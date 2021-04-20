@@ -1,6 +1,6 @@
 # Beast Mode StimulusReflex
 
-A server-side rendered faceted search UI demo featuring StimulusReflex and All Futures.
+A server-side rendered faceted search UI demo featuring [StimulusReflex](https://docs.stimulusreflex.com) and [All Futures](https://github.com/leastbad/all_futures).
 
 ## Installation
 
@@ -11,3 +11,5 @@ A server-side rendered faceted search UI demo featuring StimulusReflex and All F
 ## Dependencies
 
 Make sure that your Postgres and Redis settings are configured via the `REDIS_URL` environment variable.
+
+[![](http://img.youtube.com/vi/Fbo21aWFbhQ/0.jpg)](http://www.youtube.com/watch?v=Fbo21aWFbhQ "")
