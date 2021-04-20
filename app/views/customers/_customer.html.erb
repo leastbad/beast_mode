@@ -1,0 +1,14 @@
+<tr>
+  <td>
+    <div class="d-flex align-items-center">
+      <div class="user-avatar bg-<%= color[customer.state] %> me-3"><span><%= customer.name.split(" ")[0, 2].map(&:first).join %></span></div>
+      <div class="d-block">
+        <span class="fw-bold"><%= customer.name %></span>
+        <div class="small text-gray"><%= customer.email %></div>
+      </div>
+    </div>
+  </td>
+  <td><span class="fw-normal text-wrap"><%= customer.company %></span></td>
+  <td><span class="fw-normal"><%= customer.age %></span></td>
+  <td><span class="fw-normal text-<%= color[customer.state] %>"><%= customer.state %></span></td>
+</tr>

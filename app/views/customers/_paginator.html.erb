@@ -1,0 +1,18 @@
+  <div id="paginator" class="card-footer px-3 border-0 d-flex flex-column flex-lg-row align-items-center justify-content-between">
+    <nav aria-label="Customer results">
+      <ul class="pagination mb-0">
+        <li class="page-item"><a href="#" id="page_prev_li" class="page-link" data-reflex="click->Customers#paginate" data-filter="<%= filter.id %>" data-page="<%= pagy.prev || 1 %>"><span class="fas fa-angle-double-left"></span></a></li>
+        <% pagy.series.each do |item| %>
+          <% if item == :gap %>
+            <li class="page-item disabled"><a class="page-link"><span class="fas fa-ellipsis-h"></span></a></li>
+          <% else %>
+            <li class="page-item <%= "active" if item.is_a?(String) %>">
+              <a href="#" id="page_<%= item %>_li" class="page-link" data-reflex="click->Customers#paginate" data-filter="<%= filter.id %>" data-page="<%= item %>"><%= item %></a>
+            </li>
+          <% end %>
+        <% end %>
+        <li class="page-item"><a href="#" id="page_next_li" class="page-link" data-reflex="click->Customers#paginate" data-filter="<%= filter.id %>" data-page="<%= pagy.next || pagy.last %>"><span class="fas fa-angle-double-right"></span></a></li>
+      </ul>
+    </nav>
+    <div class="fw-normal small mt-4 mt-lg-0"><%== pagy_info(pagy, "customers") %></div>
+  </div>

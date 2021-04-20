@@ -1,0 +1,76 @@
+.fc-h-event {
+    border: 0;
+    padding: 3px;
+    display: block;
+}
+
+.fc-daygrid-day-frame {
+    padding: 5px;
+    border: 1px solid $soft;
+}
+
+.fc-daygrid-day {
+    transition: $transition-base;
+}
+
+.fc .fc-scrollgrid, .fc .fc-scrollgrid table {
+    border-color: $white;
+}
+
+.fc-daygrid-day:hover {
+    cursor: pointer;
+    background: rgba($secondary, 0.2);
+}
+
+.fc {
+    .fc-highlight {
+        background-color: rgba($secondary, 0.2);
+    }
+
+    .fc-daygrid-day-frame {
+        padding: 5px;
+        border: 1px solid $soft;
+        width: 100%;
+        height: 140px;
+        @include media-breakpoint-down(sm) { 
+            height:100%
+        }
+    }
+
+    .fc-col-header-cell-cushion {
+        padding: 6px 8px;
+    }
+
+    .fc-toolbar {
+        @include media-breakpoint-down(sm) { 
+            .btn{
+                padding: 0.25rem 0.45rem;
+            }
+            .fc-direction-ltr .fc-toolbar>*>:not(:first-child) {
+                margin-left: .35em;
+            }
+        }
+    }
+}
+
+.fc-daygrid-event {
+    font-weight: $font-weight-bold;
+    @include border-radius($border-radius-sm);
+}
+
+.fc-direction-ltr {
+    .fc-daygrid-event{
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+}
+
+.fc-daygrid-day-number{
+    font-weight: $font-weight-bold;
+}
+
+@include media-breakpoint-down(md) {
+    .fc .fc-toolbar-title {
+        font-size: 1rem;
+    }
+}

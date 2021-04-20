@@ -1,0 +1,17 @@
+<%= render partial: "filters", locals: {filter: @filter} %>
+<div class="card card-body shadow-sm table-wrapper table-responsive">
+  <table class="table user-table table-hover align-items-center">
+    <thead>
+      <tr data-controller="sort">
+        <th class="border-bottom" data-filter="<%= @filter.id %>" data-order="name" data-direction="asc" data-reflex="click->Customers#sort">Name <span class="ms-2 fas fa-chevron-down"></span></th>
+        <th class="border-bottom" data-filter="<%= @filter.id %>" data-order="company" data-direction="desc" data-reflex="click->Customers#sort">Company <span class="ms-2 fas fa-chevron-down d-none"></span></th>
+        <th class="border-bottom" data-filter="<%= @filter.id %>" data-order="age" data-direction="desc" data-reflex="click->Customers#sort">Age <span class="ms-2 fas fa-chevron-down d-none"></span></th>
+        <th class="border-bottom" data-filter="<%= @filter.id %>" data-order="state" data-direction="desc" data-reflex="click->Customers#sort">Status <span class="ms-2 fas fa-chevron-down d-none"></span></th>
+      </tr>
+    </thead>
+    <tbody id="customers">
+      <%= render @customers %>
+    </tbody>
+  </table>
+  <%= render partial: "paginator", locals: {pagy: @pagy, filter: @filter} %>
+</div>

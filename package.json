@@ -1,0 +1,28 @@
+{
+  "name": "beast_mode",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.3",
+    "@fullhuman/postcss-purgecss": "^4.0.2",
+    "@popperjs/core": "^2.6.0",
+    "@rails/actioncable": "^6.1.2-1",
+    "@rails/webpacker": "5.2.1",
+    "bootstrap": "^5.0.0-beta3",
+    "cable_ready": "https://github.com/hopsoft/cable_ready.git#master",
+    "debounced": "^0.0.5",
+    "nouislider": "^14.6.3",
+    "rough-notation": "^0.5.1",
+    "sass": "^1.32.7",
+    "slim-select": "https://github.com/leastbad/slim-select",
+    "stimulus": "^2.0.0",
+    "stimulus_reflex": "https://github.com/hopsoft/stimulus_reflex.git#master",
+    "wnumb": "^1.2.0"
+  },
+  "version": "1.0.0",
+  "devDependencies": {
+    "@prettier/plugin-ruby": "^1.5.3",
+    "prettier": "^2.2.1",
+    "prettier-plugin-erb": "^0.1.0",
+    "webpack-dev-server": "^3.11.0"
+  }
+}

@@ -1,0 +1,46 @@
+<div class="table-settings mb-4 mt-4 mt-lg-0">
+  <div class="row align-items-end">
+    <div class="col-12 col-lg-6 d-flex">
+      <div class="input-group me-2 me-lg-3">
+        <span class="input-group-text"><span class="fas fa-search"></span></span>
+        <input type="text" class="form-control" placeholder="Search" data-reflex="debounced:input->Customers#search" data-filter="<%= filter.id %>" />
+      </div>
+      <select class="w-50 me-2 me-lg-3" data-controller="select" data-select-show-search-value="false" required data-reflex="change->Customers#state" data-filter="<%= filter.id %>">
+        <option selected value="">All</option>
+        <option value="Active">Active</option>
+        <option value="Inactive">Inactive</option>
+        <option value="Pending">Pending</option>
+        <option value="Suspended">Suspended</option>
+      </select>
+    </div>
+    <div class="col-12 col-lg-6 mt-2 mt-lg-0 d-flex justify-content-between">
+      <div class="w-50 me-3 mt-3">
+        <span class="position-relative start-48">Age</span>
+        <div data-controller="range-slider" data-range-slider-min-value="18" data-range-slider-max-value="70">
+          <div data-range-slider-target="element"></div>
+          <input type="hidden" data-range-slider-target="low" value="21" data-reflex="debounced:change->Customers#low" data-filter="<%= filter.id %>" />
+          <input type="hidden" data-range-slider-target="high" value="65" data-reflex="debounced:change->Customers#high" data-filter="<%= filter.id %>" />
+        </div>
+      </div>
+      <div class="btn-group mt-2 me-1" data-controller="dropdown">
+        <button class="btn btn-link text-dark dropdown-toggle dropdown-toggle-split m-0 p-1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="icon icon-sm icon-gray pt-1">
+            <span class="fas fa-sliders-h"></span>
+          </span>
+          <span class="sr-only">Toggle Dropdown</span>
+        </button>
+        <div class="dropdown-menu dropdown-menu-end pb-0">
+          <span class="small ps-3 fw-bold text-dark">Show</span>
+          <a class="dropdown-item d-flex fw-bold" href="#" data-reflex="click->Customers#items" data-items="10" data-filter="<%= filter.id %>">10 <span class="icon icon-small ms-auto"><span class="fas fa-check"></span></span></a>
+          <a class="dropdown-item d-flex fw-bold" href="#" data-reflex="click->Customers#items" data-items="20" data-filter="<%= filter.id %>">20 <span class="icon icon-small ms-auto d-none"><span class="fas fa-check"></span></span></a>
+          <a class="dropdown-item d-flex fw-bold" href="#" data-reflex="click->Customers#items" data-items="30" data-filter="<%= filter.id %>">30 <span class="icon icon-small ms-auto d-none"><span class="fas fa-check"></span></span></a>
+          <div role="separator" class="dropdown-divider my-0"></div>
+          <div class="form-check form-switch d-flex justify-content-start mt-2">
+            <label class="form-check-label ms-n17" for="lawyers">Lawyers</label>
+            <input class="form-check-input ms-35" type="checkbox" id="lawyers" data-reflex="change->Customers#lawyers" data-filter="<%= filter.id %>" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

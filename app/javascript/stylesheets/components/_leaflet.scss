@@ -1,0 +1,57 @@
+.map {
+	height: 400px;
+	width: 100%;
+	@include filter(grayscale(100%))
+}
+
+.mapouter {
+	position:relative;
+	text-align:right;
+	height:500px;
+	width:100%;
+}
+
+.gmap_canvas {
+	overflow:hidden;
+	background:none!important;
+	height:500px;
+	width:100%;
+	@include filter(grayscale(100%));
+
+	#gmap_canvas {
+		width: 100%;
+		height: 500px;
+	}
+}
+
+#mapbox {
+	width: 100%;
+	height: 600px;
+	z-index: 1;
+}
+
+.leaflet-popup-content-wrapper {
+	padding: 8px 8px 8px 0;
+}
+
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+	box-shadow: $box-shadow-sm;
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+	padding: 7px 15px 0 0;
+  display: none;
+}
+
+.logo-map {
+	position: absolute;
+	right: 0;
+	z-index: 3;
+}
+
+.search-map {
+	position: absolute;
+	z-index: 3;
+	bottom: 30px;
+	width: 100%;
+}
