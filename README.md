@@ -8,6 +8,8 @@ A server-side rendered faceted search UI demo featuring [StimulusReflex](https:/
 2. yarn install
 3. bin/setup
 
+Make sure that if you *don't* run `bin/setup` that you run `rake db:seed` manually.
+
 ## Dependencies
 
 Make sure that your Postgres and Redis settings are configured via the `REDIS_URL` environment variable.
