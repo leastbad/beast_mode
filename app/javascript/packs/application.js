@@ -1,4 +1,3 @@
-import 'stylesheets/application.scss'
 import bootstrap from 'bootstrap/dist/js/bootstrap.bundle'
 import { annotate, annotationGroup } from 'rough-notation'
 import '@fortawesome/fontawesome-free/js/solid'
