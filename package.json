@@ -18,6 +18,10 @@
   },
   "version": "1.0.0",
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^4.0.3",
+    "postcss": "^8.2.10",
+    "postcss-loader": "^4.0.3",
+    "sass": "^1.32.7",
     "@prettier/plugin-ruby": "^1.5.3",
     "prettier": "^2.2.1",
     "prettier-plugin-erb": "^0.1.0",

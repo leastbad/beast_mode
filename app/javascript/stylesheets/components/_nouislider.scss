@@ -1,4 +1,4 @@
-// Original styles
+/*! purgecss start ignore */
 .noUi-target,
 .noUi-target * {
   -webkit-touch-callout: none;
@@ -494,3 +494,4 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle {
   right: 10px;
   left: auto;
 }
+/*! purgecss end ignore */
