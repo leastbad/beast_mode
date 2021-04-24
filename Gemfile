@@ -18,7 +18,7 @@ gem "pagy", "~> 3.10.0"
 gem "faker", "~> 2.16"
 gem "kredis", "~> 0.2.3"
 gem "pg_search", "~> 2.3"
-gem "all_futures", github: "leastbad/all_futures", branch: "master"
+gem "all_futures", "~> 1.0"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
