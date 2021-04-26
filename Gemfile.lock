@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/hopsoft/cable_ready.git
-  revision: 7cea7eb3ce262380dccca18b913a52b1ca2a2f72
+  revision: daf7ddcfed6dd1e4490e0c8fa741b1f4c2a95621
   branch: master
   specs:
     cable_ready (4.5.0)
@@ -86,7 +86,7 @@ GEM
       zeitwerk (~> 2.3)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
-    all_futures (1.0.1)
+    all_futures (1.0.2)
       activeentity (~> 6.1)
       kredis (~> 0.2)
     ast (2.4.2)
@@ -260,7 +260,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  all_futures (~> 1.0)
+  all_futures (~> 1.0.2)
   bootsnap (>= 1.4.4)
   byebug
   cable_ready!

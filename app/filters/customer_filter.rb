@@ -1,4 +1,4 @@
-class CustomerFilter < Possibility
+class CustomerFilter < AllFutures
   attribute :search, :string
   attribute :state, :string
   attribute :lawyers, :boolean, default: false
