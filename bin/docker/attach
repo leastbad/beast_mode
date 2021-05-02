@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+project=$(basename $(pwd))
+docker attach $project-$1
