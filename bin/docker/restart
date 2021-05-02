@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+if [[ -z "$1" ]]; then
+  docker compose restart "$@"
+else
+  name="$1"
+  shift
+  project=$(basename $(pwd))
+  docker restart "$@" $project-$name
+fi

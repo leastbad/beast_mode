@@ -1,0 +1,86 @@
+version: "3.9"
+
+networks:
+  main:
+
+services:
+
+  postgres:
+    image: postgres:13
+    container_name: beast_mode-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_PASSWORD: password
+    networks:
+      - main
+    expose:
+      - 5432
+    volumes:
+      - ./.docker_volumes/postgres:/var/lib/postgresql/data:delegated
+
+  redis:
+    image: redis
+    container_name: beast_mode-redis
+    restart: unless-stopped
+    networks:
+      - main
+    expose:
+      - 6379
+
+  shell:
+    build: .
+    image: beast_mode
+    container_name: beast_mode-shell
+    working_dir: /beast_mode
+    command: /bin/bash -c "tail -f /dev/null"
+    environment:
+      BUNDLE_PATH: /bundle
+      EDITOR: /usr/bin/vim
+    networks:
+      - main
+    volumes:
+      - ./:/beast_mode:cached
+      - ./.docker_volumes/bundle:/bundle:delegated
+
+  webpack:
+    build: .
+    image: beast_mode
+    container_name: beast_mode-webpack
+    working_dir: /beast_mode
+    command: /bin/bash -c "yarn && bin/webpack-dev-server"
+    environment:
+      BUNDLE_PATH: /bundle
+      EDITOR: /usr/bin/vim
+      WEBPACKER_DEV_SERVER_HOST: 0.0.0.0
+    networks:
+      - main
+    volumes:
+      - ./:/beast_mode:cached
+      - ./.docker_volumes/bundle:/bundle:delegated
+    ports:
+      - 3035:3035
+
+  web:
+    build: .
+    image: beast_mode
+    container_name: beast_mode-web
+    working_dir: /beast_mode
+    command: /bin/bash -c "bundle && bin/rails db:create db:migrate db:seed && rm -f tmp/pids/server.pid && bin/rails s --binding=0.0.0.0 --port=3000"
+    tty: true
+    stdin_open: true
+    environment:
+      BUNDLE_PATH: /bundle
+      EDITOR: /usr/bin/vim
+      REDIS_URL: redis://redis:6379/1
+      WEBPACKER_DEV_SERVER_HOST: webpack
+    networks:
+      - main
+    volumes:
+      - ./:/beast_mode:cached
+      - ./.docker_volumes/bundle:/bundle:delegated
+    ports:
+      - 3000:3000
+    depends_on:
+      - postgres
+      - redis
+      - webpack
