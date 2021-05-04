@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/hopsoft/cable_ready.git
-  revision: 1318b07c27538ae2be445d20876941d546fada61
+  revision: 31f56975a57d3fcd59896edbb6933339ffad7c54
   branch: master
   specs:
     cable_ready (4.5.0)
