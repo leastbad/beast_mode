@@ -5,8 +5,8 @@ const purgecss = require('@fullhuman/postcss-purgecss')({
     './app/javascript/**/*.js'
   ],
   safelist: {
-    standard: [/^bg/, /^text/],
-    greedy: [/^ss/]
+    standard: [/^bg\-/, /^text\-/],
+    greedy: [/^ss\-/, /^modal\-backdrop/]
   },
   defaultExtractor: content => {
     const broadMatches = content.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || []

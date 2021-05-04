@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/hopsoft/cable_ready.git
-  revision: daf7ddcfed6dd1e4490e0c8fa741b1f4c2a95621
+  revision: 1318b07c27538ae2be445d20876941d546fada61
   branch: master
   specs:
     cable_ready (4.5.0)
@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/hopsoft/stimulus_reflex.git
-  revision: f13a9a88b105296b56d2c0b464c5a1f241b2fa02
+  revision: e723884d8986d9b97e282cb597e2484dcbc9e31a
   branch: master
   specs:
     stimulus_reflex (3.4.1)
