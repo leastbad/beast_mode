@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+project=$(basename $(pwd))
+docker exec -it $project-shell "$@"

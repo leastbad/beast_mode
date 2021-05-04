@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+project=$(basename $(pwd))
+name="$1"
+shift
+docker logs -f "$@" $project-$name

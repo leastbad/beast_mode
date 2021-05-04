@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+mkdir -p .docker_volumes/bundle
+mkdir -p .docker_volumes/postgres
+docker compose up -d "$@"
