@@ -14,7 +14,6 @@ application.load(definitionsFromContext(app))
 application.consumer = consumer
 
 StimulusReflex.initialize(application, {
-  consumer,
   controller,
   debug: true,
   isolate: true
