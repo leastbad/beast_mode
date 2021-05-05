@@ -1,7 +1,5 @@
 production: &production
-  host: <%= ENV.fetch("REDIS_URL").split(":")[2].split("@")[1] if Rails.env.production? %>
-  port: <%= ENV.fetch("REDIS_URL").split(":")[3] if Rails.env.production? %>
-  password: <%= ENV.fetch("REDIS_URL").split(":")[2].split("@")[0] if Rails.env.production? %>
+  url: <%= ENV.fetch("REDIS_URL", "redis://127.0.0.1:6379/1") %>
   timeout: 1
 
 development: &development
