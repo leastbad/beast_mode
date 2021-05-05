@@ -13,6 +13,4 @@ test:
 
 production:
   <<: *default
-  database: beast_mode
-  username: beast_mode
-  password: <%= ENV['BEAST_MODE_DATABASE_PASSWORD'] %>
+
