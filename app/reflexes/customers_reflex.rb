@@ -17,9 +17,9 @@ class CustomersReflex < ApplicationReflex
     end
   end
 
-  def state
+  def status
     facet do |filter|
-      filter[:state] = element.value
+      filter[:status] = element.value
     end
   end
 

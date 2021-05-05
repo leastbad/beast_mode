@@ -5,7 +5,7 @@
         <span class="input-group-text"><span class="fas fa-search"></span></span>
         <input type="text" class="form-control" placeholder="Search" data-reflex="debounced:input->Customers#search" data-filter="<%= filter.id %>" />
       </div>
-      <select class="w-50 me-2 me-lg-3" data-controller="select" data-select-show-search-value="false" required data-reflex="change->Customers#state" data-filter="<%= filter.id %>">
+      <select class="w-50 me-2 me-lg-3" data-controller="select" data-select-show-search-value="false" required data-reflex="change->Customers#status" data-filter="<%= filter.id %>">
         <option selected value="">All</option>
         <option value="Active">Active</option>
         <option value="Inactive">Inactive</option>

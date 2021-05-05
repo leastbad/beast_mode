@@ -1,6 +1,6 @@
 class CustomerFilter < AllFutures
   attribute :search, :string
-  attribute :state, :string
+  attribute :status, :string
   attribute :lawyers, :boolean, default: false
   attribute :low, :integer, default: 21
   attribute :high, :integer, default: 65
@@ -12,7 +12,7 @@ class CustomerFilter < AllFutures
 
   def scope
     Customer
-      .with_state(state)
+      .with_status(status)
       .only_lawyers(lawyers)
       .between(low, high)
       .order(order => direction)
