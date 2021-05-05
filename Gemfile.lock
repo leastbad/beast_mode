@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/hopsoft/stimulus_reflex.git
-  revision: e723884d8986d9b97e282cb597e2484dcbc9e31a
+  revision: 48336a68ac020f650f384541d3de863ae64193b9
   branch: master
   specs:
     stimulus_reflex (3.4.1)
