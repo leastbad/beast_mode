@@ -9,7 +9,7 @@ Rails.application.configure do
     redis: {
       expire_after: 1.year,
       ttl: 1.year,
-      url: ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" }
+      url: ENV.fetch("REDIS_URL") { "redis://127.0.0.1:6379/1" }
     }
   }
 
@@ -34,7 +34,7 @@ Rails.application.configure do
   config.action_controller.enable_fragment_cache_logging = true
   config.action_controller.default_url_options = {host: "localhost", port: 3000}
 
-  config.cache_store = :redis_cache_store, {url: ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" }}
+  config.cache_store = :redis_cache_store, {url: ENV.fetch("REDIS_URL") { "redis://127.0.0.1:6379/1" }}
   config.public_file_server.headers = {
     "Cache-Control" => "public, max-age=#{2.days.to_i}"
   }
