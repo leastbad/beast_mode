@@ -8,6 +8,7 @@ class CustomerFilter < AllFutures
   attribute :page, :integer, default: 1
   attribute :order, :string, default: "name"
   attribute :direction, :string, default: "asc"
+  attribute :threshold, :float, default: 0.1
 
   def scope
     Customer
@@ -15,6 +16,6 @@ class CustomerFilter < AllFutures
       .only_lawyers(lawyers)
       .between(low, high)
       .order(order => direction)
-      .search_for(search)
+      .search_for(search, threshold)
   end
 end

@@ -48,6 +48,12 @@ class CustomersReflex < ApplicationReflex
     end
   end
 
+  def threshold
+    facet do |filter|
+      filter[:threshold] = element.checked ? 0.3 : 0.1
+    end
+  end
+
   private
 
   def facet
