@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'pagy/extras/overflow'
+require "pagy/extras/overflow"
 
 Pagy::VARS[:items] = 10
 Pagy::VARS[:size] = [1, 4, 4, 1]

@@ -3,9 +3,9 @@ class Customer < ApplicationRecord
   pg_search_scope :stemmed, ->(query, threshold) {
     {
       query: query,
-      against: {name: "A", email: "B", company: "B", age: "B", status: "C"}, 
+      against: {name: "A", email: "B", company: "B", age: "B", status: "C"},
       using: {
-        tsearch: {prefix: true}, 
+        tsearch: {prefix: true},
         trigram: {threshold: threshold, only: [:name]}
       }
     }
