@@ -13,5 +13,5 @@ class Customer < ApplicationRecord
   scope :search_for, ->(query, threshold) { stemmed(query, threshold) if query.present? }
   scope :with_status, ->(status) { where(status: status) if status.present? }
   scope :only_lawyers, ->(lawyers) { where("company like ?", "% and %") if lawyers }
-  scope :between, ->(low, high) { where(age: low..high) if low && high }
+  scope :between, ->(low, high) { where(age: low..high) }
 end
