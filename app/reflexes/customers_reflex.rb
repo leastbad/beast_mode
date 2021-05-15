@@ -60,7 +60,7 @@ class CustomersReflex < ApplicationReflex
     filter = CustomerFilter.find(element.dataset.filter)
     yield filter
     pagy, customers = pagy(filter.scope, page: filter.page, items: filter.items)
-    morph "#customers", render_collection(customers)
+    morph customers
     morph "#paginator", render(partial: "customers/paginator", locals: {pagy: pagy, filter: filter})
   end
 end
