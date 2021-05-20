@@ -1678,9 +1678,9 @@ bytes@3.1.0:
   resolved "https://registry.yarnpkg.com/bytes/-/bytes-3.1.0.tgz#f6cf7933a360e0588fa9fde85651cdc7f805d1f6"
   integrity sha512-zauLjrfCG+xvoyaqLoV8bLVXXNGC4JqlxFCutSDWA6fJrTo2ZuvLYTqZ7aHBLZSMOopbzwv8f+wZcVzfVTI2Dg==
 
-"cable_ready@>= 4.5.0", "cable_ready@https://github.com/hopsoft/cable_ready.git#master":
+"cable_ready@>= 4.5.0", "cable_ready@https://github.com/stimulusreflex/cable_ready.git#master":
   version "4.5.0"
-  resolved "https://github.com/hopsoft/cable_ready.git#b03cbe687193faf28adc6386757d616ad7372514"
+  resolved "https://github.com/stimulusreflex/cable_ready.git#5d3c41b2ef8e17974001d3327b52d875c29e6e1a"
   dependencies:
     morphdom "^2.6.1"
 
@@ -6261,9 +6261,9 @@ stimulus@^2.0.0:
     "@stimulus/core" "^2.0.0"
     "@stimulus/webpack-helpers" "^2.0.0"
 
-"stimulus_reflex@https://github.com/hopsoft/stimulus_reflex.git#master":
+"stimulus_reflex@https://github.com/stimulusreflex/stimulus_reflex.git#master":
   version "3.4.1"
-  resolved "https://github.com/hopsoft/stimulus_reflex.git#9e6de165e26cf8e9c5c3b7153602e0bb9c7293d1"
+  resolved "https://github.com/stimulusreflex/stimulus_reflex.git#782ce1d10219e456a78970f17f9db37b8c03c671"
   dependencies:
     "@rails/actioncable" ">= 6.0"
     cable_ready ">= 4.5.0"

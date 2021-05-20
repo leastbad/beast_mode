@@ -12,8 +12,8 @@ gem "redis", ">= 4.0"
 gem "redis-session-store", "~> 0.11.3"
 gem "bootsnap", ">= 1.4.4", require: false
 
-gem "cable_ready", github: "hopsoft/cable_ready", branch: "master"
-gem "stimulus_reflex", github: "hopsoft/stimulus_reflex", branch: "master"
+gem "cable_ready", github: "stimulusreflex/cable_ready", branch: "master"
+gem "stimulus_reflex", github: "stimulusreflex/stimulus_reflex", branch: "master"
 gem "pagy", "~> 3.10.0"
 gem "faker", "~> 2.16"
 gem "kredis", "~> 0.2.3"
