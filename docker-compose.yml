@@ -18,8 +18,8 @@ x-app: &app
   volumes:
     - ./:/beast_mode:cached
     - bundle:/bundle:delegated
-    - unsynchronized:/mls_service/log
-    - unsynchronized:/mls_service/tmp
+    - unsynchronized:/mls_service/log:delegated
+    - unsynchronized:/mls_service/tmp:delegated
 
 volumes:
   bundle:
