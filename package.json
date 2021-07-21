@@ -8,7 +8,7 @@
     "@rails/actioncable": "^6.1.2-1",
     "@rails/webpacker": "5.3.0",
     "bootstrap": "^5.0.2",
-    "cable_ready": "5.0.0-pre1",
+    "cable_ready": "5.0.0-pre2",
     "debounced": "^0.0.5",
     "nouislider": "^14.6.3",
     "postcss": "^8.2.10",
@@ -17,7 +17,7 @@
     "sass": "^1.32.7",
     "slim-select": "https://github.com/leastbad/slim-select",
     "stimulus": "^2.0.0",
-    "stimulus_reflex": "3.5.0-pre1",
+    "stimulus_reflex": "3.5.0-pre2",
     "wnumb": "^1.2.0"
   },
   "version": "1.0.0",
