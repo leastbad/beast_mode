@@ -2,7 +2,7 @@
   "name": "beast_mode",
   "private": true,
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.3",
+    "@fortawesome/fontawesome-free": "^5.15.4",
     "@fullhuman/postcss-purgecss": "^4.0.3",
     "@popperjs/core": "^2.6.0",
     "@rails/actioncable": "^6.1.2-1",

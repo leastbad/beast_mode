@@ -16,9 +16,9 @@ gem "cable_ready", "5.0.0.pre2"
 gem "stimulus_reflex", "3.5.0.pre2"
 gem "pagy", "~> 3.10.0"
 gem "faker", "~> 2.18"
-gem "kredis", "~> 0.2.3"
+gem "kredis", "~> 0.4"
 gem "pg_search", "~> 2.3"
-gem "all_futures", "~> 1.0.2"
+gem "all_futures", "~> 1.0.3"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
@@ -27,7 +27,7 @@ end
 group :development do
   gem "web-console", ">= 4.1.0"
   gem "listen", "~> 3.3"
-  gem "pry-rails"
+  gem "ruby_jard", "~> 0.3"
   gem "standard", "~> 1.0"
 end
 
