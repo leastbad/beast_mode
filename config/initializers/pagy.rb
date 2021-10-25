@@ -2,9 +2,9 @@
 
 require "pagy/extras/overflow"
 
-Pagy::VARS[:items] = 10
-Pagy::VARS[:size] = [1, 4, 4, 1]
-Pagy::VARS[:overflow] = :last_page
+Pagy::DEFAULT[:items] = 10
+Pagy::DEFAULT[:size] = [1, 4, 4, 1]
+Pagy::DEFAULT[:overflow] = :last_page
 
 # Pagy initializer file (3.6.0)
 # Customize only what you really need and notice that Pagy works also without any of the following lines.

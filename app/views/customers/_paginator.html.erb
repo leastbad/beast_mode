@@ -14,5 +14,5 @@
         <li class="page-item"><a href="#" id="page_next_li" class="page-link" data-reflex="click->Customers#paginate" data-filter="<%= filter.id %>" data-page="<%= pagy.next || pagy.last %>"><span class="fas fa-angle-double-right"></span></a></li>
       </ul>
     </nav>
-    <div class="fw-normal small mt-4 mt-lg-0"><%== pagy_info(pagy, "customers") %></div>
+    <div class="fw-normal small mt-4 mt-lg-0"><%== pagy_info(pagy, item_name: "customers") %></div>
   </div>
