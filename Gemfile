@@ -11,8 +11,8 @@ gem "redis", ">= 4.5.1"
 gem "redis-session-store", "~> 0.11.3"
 gem "bootsnap", ">= 1.9.1", require: false
 
-gem "cable_ready", "5.0.0.pre7"
-gem "stimulus_reflex", "3.5.0.pre7"
+gem "cable_ready", "5.0.0.pre8"
+gem "stimulus_reflex", "3.5.0.pre8"
 gem "pagy", "~> 5.2.2"
 gem "faker", "~> 2.19"
 gem "kredis", "~> 0.4.0"

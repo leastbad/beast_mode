@@ -1,4 +1,4 @@
-class CustomerFilter < AllFutures
+class CustomerFilter < AllFutures::Base
   # Facets
   attribute :search, :string
   attribute :threshold, :float, default: 0.1
