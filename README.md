@@ -1,6 +1,6 @@
 # Beast Mode StimulusReflex
 
-A server-side rendered faceted search UI demo featuring [StimulusReflex](https://docs.stimulusreflex.com) and [All Futures](https://github.com/leastbad/all_futures).
+A server-side rendered faceted search UI demo featuring [StimulusReflex](https://docs.stimulusreflex.com) and [AllFutures](https://github.com/leastbad/all_futures).
 
 ## Installation
 
