@@ -16,7 +16,7 @@
     "rough-notation": "^0.5.1",
     "sass": "^1.32.12",
     "slim-select": "https://github.com/leastbad/slim-select",
-    "stimulus": "^2.0.0",
+    "stimulus": "^3.0.1",
     "stimulus_reflex": "3.5.0-pre8",
     "wnumb": "^1.2.0"
   },
