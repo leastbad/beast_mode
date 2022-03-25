@@ -5,7 +5,7 @@ ruby "2.7.3"
 
 gem "rails", "~> 6.1.4.1"
 gem "pg", "~> 1.2.3"
-gem "puma", "~> 5.5.2"
+gem "puma", "~> 5.6.2"
 gem "webpacker", "~> 5.4.3"
 gem "redis", ">= 4.5.1"
 gem "redis-session-store", "~> 0.11.3"
@@ -15,9 +15,9 @@ gem "cable_ready", "5.0.0.pre8"
 gem "stimulus_reflex", "3.5.0.pre8"
 gem "pagy", "~> 5.2.2"
 gem "faker", "~> 2.19"
-gem "kredis", "~> 0.4.0"
+gem "kredis", "~> 1.1.0"
 gem "pg_search", "~> 2.3.5"
-gem "all_futures", "~> 1.0.3"
+gem 'all_futures', github: 'leastbad/all_futures', branch: 'master'
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

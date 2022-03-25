@@ -1,3 +1,16 @@
+GIT
+  remote: https://github.com/leastbad/all_futures.git
+  revision: ecec2e88d6d6602e02df5e22bcf93ab4c25043be
+  branch: master
+  specs:
+    all_futures (1.0.3)
+      activeentity (~> 6.3)
+      activemodel (>= 4.0)
+      activerecord (>= 4.0)
+      activesupport (>= 4.0)
+      kredis (~> 1.0)
+      ulid (~> 1.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -39,9 +52,9 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
-    activeentity (6.1.1)
-      activemodel (~> 6.0, < 7.0)
-      activesupport (~> 6.0, < 7.0)
+    activeentity (6.3.0)
+      activemodel (>= 6.0, < 8)
+      activesupport (>= 6.0, < 8)
     activejob (6.1.4.1)
       activesupport (= 6.1.4.1)
       globalid (>= 0.3.6)
@@ -65,9 +78,6 @@ GEM
       zeitwerk (~> 2.3)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
-    all_futures (1.0.3)
-      activeentity (~> 6.1)
-      kredis (~> 0.4)
     ast (2.4.2)
     bindex (0.8.1)
     bootsnap (1.9.1)
@@ -98,7 +108,7 @@ GEM
       activesupport (>= 5.0)
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
-    kredis (0.4.0)
+    kredis (1.1.0)
       activesupport (>= 6.0.0)
       redis (~> 4.2)
     listen (3.7.0)
@@ -130,7 +140,7 @@ GEM
       coderay (~> 1.1)
       method_source (~> 1.0)
     public_suffix (4.0.6)
-    puma (5.5.2)
+    puma (5.6.2)
       nio4r (~> 2.0)
     racc (1.6.0)
     rack (2.2.3)
@@ -221,6 +231,7 @@ GEM
     tty-screen (0.8.1)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
+    ulid (1.3.0)
     unicode-display_width (2.1.0)
     web-console (4.2.0)
       actionview (>= 6.0.0)
@@ -247,18 +258,18 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  all_futures (~> 1.0.3)
+  all_futures!
   bootsnap (>= 1.9.1)
   byebug
   cable_ready (= 5.0.0.pre8)
   capybara (>= 3.26)
   faker (~> 2.19)
-  kredis (~> 0.4.0)
+  kredis (~> 1.1.0)
   listen (~> 3.3)
   pagy (~> 5.2.2)
   pg (~> 1.2.3)
   pg_search (~> 2.3.5)
-  puma (~> 5.5.2)
+  puma (~> 5.6.2)
   rails (~> 6.1.4.1)
   redis (>= 4.5.1)
   redis-session-store (~> 0.11.3)

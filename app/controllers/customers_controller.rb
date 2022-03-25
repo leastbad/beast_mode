@@ -1,6 +1,6 @@
 class CustomersController < ApplicationController
   def index
-    @filter = CustomerFilter.new
+    @filter = CustomerFilter.create
     @pagy, @customers = pagy(@filter.scope)
   end
 end
