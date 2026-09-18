@@ -1,37 +1,38 @@
 source "https://rubygems.org"
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "2.7.3"
+ruby "3.4.10"
 
-gem "rails", "~> 6.1.4.1"
-gem "pg", "~> 1.2.3"
-gem "puma", "~> 5.6.2"
-gem "webpacker", "~> 5.4.3"
-gem "redis", ">= 4.5.1"
-gem "redis-session-store", "~> 0.11.3"
-gem "bootsnap", ">= 1.9.1", require: false
+gem "rails", "~> 8.1.3", ">= 8.1.3.1"
+# json 3.0 broke ActiveSupport::JSON.decode until a Rails release ships the fix
+gem "json", "< 3"
+gem "propshaft"
+gem "pg", "~> 1.5"
+gem "puma", ">= 6.0"
+gem "bootsnap", require: false
 
-gem "cable_ready", "5.0.0.pre8"
-gem "stimulus_reflex", "3.5.0.pre8"
-gem "pagy", "~> 5.2.2"
-gem "faker", "~> 2.19"
-gem "kredis", "~> 1.1.0"
-gem "pg_search", "~> 2.3.5"
-gem 'all_futures', github: 'leastbad/all_futures', branch: 'master'
+gem "redis", "~> 5.0"
+gem "redis-session-store", "~> 0.11.6"
+gem "kredis", "~> 1.8"
+
+gem "cable_ready", "5.0.6"
+gem "stimulus_reflex", "3.5.5"
+gem "all_futures", "~> 2.0"
+
+gem "jsbundling-rails"
+gem "pagy", "~> 9.3"
+gem "pg_search"
+gem "faker"
 
 group :development, :test do
-  gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
+  gem "debug", platforms: %i[mri windows], require: "debug/prelude"
 end
 
 group :development do
-  gem "web-console", ">= 4.1.0"
-  gem "listen", "~> 3.3"
-  gem "ruby_jard"
-  gem "standard", "~> 1.4.0"
+  gem "web-console"
+  gem "standard"
 end
 
 group :test do
-  gem "capybara", ">= 3.26"
+  gem "capybara"
   gem "selenium-webdriver"
-  gem "webdrivers"
 end

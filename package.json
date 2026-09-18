@@ -1,30 +1,26 @@
 {
   "name": "beast_mode",
   "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "esbuild app/javascript/application.js --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets",
+    "build:watch": "esbuild app/javascript/application.js --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets --watch"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.1.1",
-    "@fullhuman/postcss-purgecss": "^4.0.3",
-    "@popperjs/core": "^2.6.0",
-    "@rails/actioncable": "^6.1.4-1",
-    "@rails/webpacker": "5.4.3",
-    "bootstrap": "^5.1.3",
-    "cable_ready": "5.0.0-pre8",
+    "@hotwired/stimulus": "^3.2.2",
+    "@popperjs/core": "^2.11.8",
+    "@rails/actioncable": "^8.0.200",
+    "bootstrap": "^5.3.3",
+    "cable_ready": "5.0.6",
     "debounced": "^0.0.5",
     "nouislider": "^14.6.3",
-    "postcss": "^8.2.10",
-    "postcss-loader": "^4.0.3",
     "rough-notation": "^0.5.1",
-    "sass": "^1.32.12",
     "slim-select": "https://github.com/leastbad/slim-select",
-    "stimulus": "^3.0.1",
-    "stimulus_reflex": "3.5.0-pre8",
+    "stimulus_reflex": "3.5.5",
     "wnumb": "^1.2.0"
   },
-  "version": "1.0.0",
   "devDependencies": {
-    "@prettier/plugin-ruby": "^1.5.3",
-    "prettier": "^2.2.1",
-    "prettier-plugin-erb": "^0.1.0",
-    "webpack-dev-server": "^3.11.2"
+    "esbuild": "^0.25.0"
   }
 }

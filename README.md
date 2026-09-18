@@ -1,105 +1,53 @@
 # Beast Mode StimulusReflex
 
-A server-side rendered faceted search UI demo featuring [StimulusReflex](https://docs.stimulusreflex.com) and [AllFutures](https://github.com/leastbad/all_futures).
+A server-rendered faceted search UI demo for Rails: filter, sort, and paginate `Customer` records with [StimulusReflex](https://docs.stimulusreflex.com) and [AllFutures](https://github.com/leastbad/all_futures).
+
+Live demo (if still up): [beastmode.leastbad.com](https://beastmode.leastbad.com)
+
+## Stack
+
+- Ruby **3.4.10** / Rails **8.1**
+- Stimulus only (no Turbo)
+- Public **StimulusReflex 3.5.5** + **CableReady 5.0.6** (Ruby gem and npm package versions matched)
+- **AllFutures ~> 2.0** from RubyGems (explicit `create` / `find` / `save`)
+- JS via **esbuild** (`jsbundling-rails`); CSS from `public/css/`
+- Redis for ActionCable, cache, sessions (`redis-session-store`), and AllFutures via Kredis
+
+## Prerequisites
+
+- Ruby 3.4.10 (see `.ruby-version`)
+- Node **20+** (see `.nvmrc`; `nvm use`)
+- PostgreSQL with `pg_trgm` available for seeds/search
+- Redis (`REDIS_URL`, default `redis://127.0.0.1:6379/1`)
 
 ## Installation
-
-1. bundle install
-2. yarn install
-3. bin/setup
-
-Make sure that if you *don't* run `bin/setup` that you run `rake db:seed` manually.
-
-## Dependencies
-
-Make sure that your Postgres and Redis settings are configured via the `REDIS_URL` environment variable.
-
-## Docker
-
-You can also run the entire application and its dependencies with Docker.
 
 ```sh
 git clone https://github.com/leastbad/beast_mode.git
 cd beast_mode
-bin/docker/up
+nvm use
+bundle install
+yarn install && yarn build
+bin/rails db:prepare db:seed
+bin/dev
 ```
 
-*NOTE: You may need to run `bin/docker/up` more than once on initial boot*
+Open [http://localhost:3000](http://localhost:3000).
 
-### Docker binstubs
+`bin/dev` starts Puma and `yarn build:watch` via Foreman (loads RVM + nvm from `.ruby-version` / `.nvmrc`).
 
-- `bin/docker/up` - starts the entire containerized environment
-- `bin/docker/down` - stops all services and removes containers, networks, volumes, and images
-- `bin/docker/start` - starts stopped containers
+Without Foreman: `yarn build && bin/rails s` (after `rvm use` / correct Ruby on `PATH`).
 
-    ```sh
-    bin/docker/start
-    bin/docker/start web
-    bin/docker/start webpack
-    ```
+### Environment
 
-- `bin/docker/stop` - stops containers without removing them
+| Variable | Default |
+|----------|---------|
+| `DATABASE_URL` | `postgres://127.0.0.1:5432/beast_mode_development` |
+| `REDIS_URL` | `redis://127.0.0.1:6379/1` |
 
-    ```sh
-    bin/docker/stop
-    bin/docker/stop web
-    bin/docker/stop webpack
-    ```
+## Notes
 
-- `bin/docker/restart` - restarts containers
-
-    ```sh
-    bin/docker/restart
-    bin/docker/restart web
-    bin/docker/restart webpack
-    ```
-
-- `bin/docker/attach` - attach to container, _useful for debugging with pry and byebug_
-
-    ```sh
-    bin/docker/attach web
-    bin/docker/attach webpack
-    <CTRL-P><CTRL-Q>
-    ```
-
-- `bin/docker/exec` - executes a command inside the shell container
-
-    ```sh
-    bin/docker/exec bash
-    ```
-
-- `bin/docker/tail` - tail logs in a container
-
-    ```sh
-    bin/docker/tail web
-    bin/docker/tail webpack
-    ```
-
-- `bin/docker/rails` - executes a rails command inside the shell container
-
-    ```sh
-    bin/docker/rails c
-    bin/docker/rails db:migrate
-    ```
-
-### Debugging with Docker
-
-1. Add a breakpoint to the project
-
-    ```ruby
-    binding.pry
-    ```
-
-2. Attach to the appropriate container to debug
-
-    ```sh
-    bin/docker/attach web
-    ```
-
-3. Detach from the container when finished
-
-    ```sh
-    <CTRL-P><CTRL-Q>
-    ```
-
-[![](http://img.youtube.com/vi/Fbo21aWFbhQ/0.jpg)](http://www.youtube.com/watch?v=Fbo21aWFbhQ "")
+- Facet state lives in an AllFutures `CustomerFilter` (Redis). Refresh the page to mint a new filter.
+- Table-row morphs must wrap rows in a real `<tbody id="customers">…</tbody>`. StimulusReflex’s `morph customers` helper wraps collections in a `<div>`, and HTML5 parsing then strips `<tr>`/`<td>` — see `CustomersReflex#facet`.
+- `slim-select` is pulled from a public GitHub fork in `package.json`.
+- A Docker Compose setup still exists under `bin/docker/` but is **not** the maintained path for this Rails 8.1 upgrade; prefer local Postgres + Redis.

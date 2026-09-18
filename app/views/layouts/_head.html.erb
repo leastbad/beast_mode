@@ -15,6 +15,6 @@
   <%= csp_meta_tag %>
   <%= action_cable_meta_tag %>
 
-  <%= javascript_pack_tag 'application' %>
+  <%= javascript_include_tag "application", type: "module" %>
   <link rel="stylesheet" media="screen" href="/css/application.css" />
 </head>

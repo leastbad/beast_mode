@@ -1,16 +1,17 @@
-// Load all the controllers within this directory and all subdirectories.
-// Controller files must be named *_controller.js.
-
-import { Application } from 'stimulus'
-import { definitionsFromContext } from 'stimulus/webpack-helpers'
+import { Application } from '@hotwired/stimulus'
 import StimulusReflex from 'stimulus_reflex'
 import consumer from '../channels/consumer'
-import controller from '../controllers/application_controller'
-
-const app = require.context('controllers', true, /_controller\.js$/)
+import controller from './application_controller'
+import DropdownController from './dropdown_controller'
+import RangeSliderController from './range_slider_controller'
+import SelectController from './select_controller'
+import SortController from './sort_controller'
 
 const application = Application.start()
-application.load(definitionsFromContext(app))
+application.register('dropdown', DropdownController)
+application.register('range-slider', RangeSliderController)
+application.register('select', SelectController)
+application.register('sort', SortController)
 application.consumer = consumer
 
 StimulusReflex.initialize(application, {

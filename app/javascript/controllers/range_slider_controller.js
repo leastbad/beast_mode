@@ -1,4 +1,4 @@
-import { Controller } from 'stimulus'
+import { Controller } from '@hotwired/stimulus'
 import noUiSlider from 'nouislider'
 import wNumb from 'wnumb'
 

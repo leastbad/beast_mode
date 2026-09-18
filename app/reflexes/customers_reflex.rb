@@ -60,8 +60,11 @@ class CustomersReflex < ApplicationReflex
     filter = CustomerFilter.find(element.dataset.filter)
     yield filter
     filter.save
-    pagy, customers = pagy(filter.scope, page: filter.page, items: filter.items)
-    morph customers
+    pagy, customers = pagy(filter.scope, page: filter.page, limit: filter.items)
+    # Wrap rows in a real <tbody> — StimulusReflex's render_collection uses a <div>,
+    # and HTML5 parsing then strips <tr>/<td> (the classic table-fragment morph bug).
+    rows = render(partial: "customers/customer", collection: customers, as: :customer)
+    morph "#customers", %(<tbody id="customers">#{rows}</tbody>)
     morph "#paginator", render(partial: "customers/paginator", locals: {pagy: pagy, filter: filter})
   end
 end

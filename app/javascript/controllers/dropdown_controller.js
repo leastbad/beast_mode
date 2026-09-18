@@ -1,4 +1,4 @@
-import { Controller } from 'stimulus'
+import { Controller } from '@hotwired/stimulus'
 import bootstrap from 'bootstrap/dist/js/bootstrap.bundle'
 
 export default class extends Controller {

@@ -1,17 +1,21 @@
-import 'stylesheets/fonts.scss'
-import bootstrap from 'bootstrap/dist/js/bootstrap.bundle'
 import { annotate, annotationGroup } from 'rough-notation'
+import bootstrap from 'bootstrap/dist/js/bootstrap.bundle'
 import '@fortawesome/fontawesome-free/js/solid'
-import 'controllers'
 import debounced from 'debounced'
+import './controllers'
 
 debounced.initialize()
 
 setTimeout(() => {
-  const modal = new bootstrap.Modal(document.getElementById('modal'))
+  const modalEl = document.getElementById('modal')
+  if (!modalEl) return
+
+  const modal = new bootstrap.Modal(modalEl)
   modal.show()
   setTimeout(() => {
     const e1 = document.querySelector('#e1')
+    if (!e1) return
+
     const a1 = annotate(e1, {
       type: 'highlight',
       color: 'yellow',

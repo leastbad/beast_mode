@@ -28,10 +28,15 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-/public/packs
-/public/packs-test
 /node_modules
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
 .docker_volumes
+
+# jsbundling / esbuild output (keep directory)
+/app/assets/builds/*
+!/app/assets/builds/.keep
+
+# Local draft; not part of the public repo
+/blogpost.md
