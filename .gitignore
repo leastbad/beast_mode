@@ -40,3 +40,6 @@ yarn-debug.log*
 
 # Local draft; not part of the public repo
 /blogpost.md
+
+# Kamal local secrets (keep .kamal/secrets template committed)
+/.kamal/postgres_password

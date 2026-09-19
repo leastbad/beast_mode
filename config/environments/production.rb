@@ -19,10 +19,15 @@ Rails.application.configure do
   config.public_file_server.headers = {"cache-control" => "public, max-age=#{1.year.to_i}"}
 
   # Assume all access to the app is happening through a SSL-terminating reverse proxy.
-  # config.assume_ssl = true
+  config.assume_ssl = true
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  # config.force_ssl = true
+  config.force_ssl = true
+
+  config.hosts << "beastmode.leastbad.com"
+  config.host_authorization = {exclude: ->(request) { request.path == "/up" }}
+
+  config.action_cable.allowed_request_origins = ["https://beastmode.leastbad.com"]
 
   # Log to STDOUT with the current request id as a default log tag.
   config.log_tags = [:request_id]

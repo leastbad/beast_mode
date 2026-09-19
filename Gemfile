@@ -22,6 +22,7 @@ gem "jsbundling-rails"
 gem "pagy", "~> 9.3"
 gem "pg_search"
 gem "faker"
+gem "kamal", "~> 2.12", require: false
 
 group :development, :test do
   gem "debug", platforms: %i[mri windows], require: "debug/prelude"

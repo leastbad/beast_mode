@@ -1,0 +1,70 @@
+service: beastmode
+
+image: beastmode
+
+servers:
+  web:
+    - 204.168.227.116
+
+proxy:
+  ssl: true
+  host: beastmode.leastbad.com
+  app_port: 3000
+  healthcheck:
+    path: /up
+
+ssh:
+  user: root
+  keys:
+    - ~/.ssh/id_ed25519_hetzner
+
+registry:
+  server: localhost:5555
+
+builder:
+  arch: amd64
+  context: .
+  driver: docker
+
+env:
+  clear:
+    RAILS_ENV: production
+    RACK_ENV: production
+    RAILS_LOG_TO_STDOUT: "1"
+    RAILS_SERVE_STATIC_FILES: "true"
+    REDIS_URL: redis://beastmode-redis:6379/1
+  secret:
+    - RAILS_MASTER_KEY
+    - DATABASE_URL
+
+aliases:
+  console: app exec --interactive --reuse "bin/rails console"
+  shell: app exec --interactive --reuse "bash"
+  logs: app logs -f
+  dbc: app exec --interactive --reuse "bin/rails dbconsole"
+
+volumes:
+  - "beastmode_storage:/rails/storage"
+
+asset_path: /rails/public/assets
+
+accessories:
+  db:
+    image: postgres:16-alpine
+    host: 204.168.227.116
+    port: "127.0.0.1:5432:5432"
+    env:
+      clear:
+        POSTGRES_USER: beastmode
+        POSTGRES_DB: beastmode_production
+      secret:
+        - POSTGRES_PASSWORD
+    directories:
+      - data:/var/lib/postgresql/data
+  redis:
+    image: redis:7-alpine
+    host: 204.168.227.116
+    port: "127.0.0.1:6379:6379"
+    cmd: redis-server --appendonly yes
+    directories:
+      - data:/data
