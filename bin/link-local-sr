@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Point node_modules at sibling CableReady / StimulusReflex checkouts (yarn link).
+# Requires dist/ built in both libraries first.
+set -euo pipefail
+root="$(cd "$(dirname "$0")/.." && pwd)"
+cr="$(cd "$root/../cable_ready" && pwd)"
+sr="$(cd "$root/../stimulus_reflex" && pwd)"
+
+[[ -f "$cr/dist/cable_ready.js" ]] || { echo "Missing $cr/dist/cable_ready.js — run yarn build there" >&2; exit 1; }
+[[ -f "$sr/dist/stimulus_reflex.js" ]] || { echo "Missing $sr/dist/stimulus_reflex.js — run yarn build there" >&2; exit 1; }
+
+(cd "$cr" && yarn unlink >/dev/null 2>&1 || true; yarn link)
+(cd "$sr" && yarn unlink >/dev/null 2>&1 || true; yarn link cable_ready; yarn link)
+(cd "$root" && yarn unlink cable_ready stimulus_reflex >/dev/null 2>&1 || true; yarn link cable_ready stimulus_reflex)
+
+echo "Linked cable_ready -> $cr"
+echo "Linked stimulus_reflex -> $sr"

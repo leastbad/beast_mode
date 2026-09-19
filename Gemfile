@@ -14,8 +14,14 @@ gem "redis", "~> 5.0"
 gem "redis-session-store", "~> 0.11.6"
 gem "kredis", "~> 1.8"
 
-gem "cable_ready", "5.0.6"
-gem "stimulus_reflex", "3.5.5"
+# Path overrides live in gitignored Gemfile.local (see Gemfile.local.example).
+# Docker/Kamal and cold clones use the published gems below.
+if File.exist?(File.expand_path("Gemfile.local", __dir__))
+  eval_gemfile "Gemfile.local"
+else
+  gem "cable_ready", "5.0.6"
+  gem "stimulus_reflex", "3.5.5"
+end
 gem "all_futures", "~> 2.0"
 
 gem "jsbundling-rails"

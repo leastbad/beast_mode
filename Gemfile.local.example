@@ -1,0 +1,6 @@
+# Copy to Gemfile.local to develop against sibling checkouts:
+#   cp Gemfile.local.example Gemfile.local
+# Then: bundle install && bin/link-local-sr && yarn build
+
+gem "cable_ready", path: "../cable_ready"
+gem "stimulus_reflex", path: "../stimulus_reflex"

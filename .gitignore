@@ -41,5 +41,8 @@ yarn-debug.log*
 # Local draft; not part of the public repo
 /blogpost.md
 
+# Local path-gem overrides (Gemfile.local.example is the template)
+/Gemfile.local
+
 # Kamal local secrets (keep .kamal/secrets template committed)
 /.kamal/postgres_password
