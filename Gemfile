@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "3.4.10"
+ruby "3.4.12"
 
 gem "rails", "~> 8.1.3", ">= 8.1.3.1"
 # json 3.0 broke ActiveSupport::JSON.decode until a Rails release ships the fix

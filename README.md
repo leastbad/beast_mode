@@ -6,7 +6,7 @@ Live demo (if still up): [beastmode.leastbad.com](https://beastmode.leastbad.com
 
 ## Stack
 
-- Ruby **3.4.10** / Rails **8.1**
+- Ruby **3.4.12** / Rails **8.1**
 - Stimulus only (no Turbo)
 - Public **StimulusReflex 3.5.5** + **CableReady 5.0.6** (Ruby gem and npm package versions matched)
 - **AllFutures ~> 2.0** from RubyGems (explicit `create` / `find` / `save`)
@@ -15,7 +15,7 @@ Live demo (if still up): [beastmode.leastbad.com](https://beastmode.leastbad.com
 
 ## Prerequisites
 
-- Ruby 3.4.10 (see `.ruby-version`)
+- Ruby 3.4.12 (see `.ruby-version`)
 - Node **20+** (see `.nvmrc`; `nvm use`)
 - PostgreSQL with `pg_trgm` available for seeds/search
 - Redis (`REDIS_URL`, default `redis://127.0.0.1:6379/1`)
